@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: flask-ocr-app
+    env: python
+    plan: free
+    buildCommand: |
+      ./build.sh
+      pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: WHATSAPP_API_URL
+        value: https://your-whatsapp-api-url/v1/messages
+      - key: WHATSAPP_API_TOKEN
+        value: EAAPJB9nzpJEBOztZAxxyUbym0E3jSK56EQnZBdCiB9raGYEgkvC3JaNUsmfAQKmfD6BsQXafWXeZBBkTjWkMIVgWsKaKPO6s39BZAVtXlX8CQ8eIWsmFbKlVRlXgddDyKe57SnLkW8LwKiIZBNG2r4X19LfVzXGr7v6JNDoTCbeLCDlHTyERpe4cbKwJuuF2XEdqIdNR3DNqXm1tmWMKRJaER0uYZA3kXVZAWcZD
